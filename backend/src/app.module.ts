@@ -9,11 +9,14 @@ import { SongModule } from './song/song.module';
     ConfigModule.forRoot({
       isGlobal: true,
       load: [
-        () => ({
-          database: {
-            uri: process.env.MONGO_URI,
-          },
-        }),
+        () => {
+          console.log(process.env.MONGO_URI, 'process.env.MONGO_URI');
+          return {
+            database: {
+              uri: process.env.MONGO_URI,
+            },
+          };
+        },
       ],
     }),
     MongooseModule.forRootAsync({
