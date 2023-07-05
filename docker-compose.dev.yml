@@ -2,11 +2,14 @@ version: '3.7'
 
 services:
   app:
-    image: rodlopez/demo-ec2-nestjs:v1
+    image: demo-ec2-nestjs:v1
     container_name: demo_nestjs
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
     env_file: .env
     ports:
-      - 80:4000
+      - 4000:4000
     depends_on:
       - mongodb
     restart: always
