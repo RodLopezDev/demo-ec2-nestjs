@@ -22,6 +22,8 @@ services:
       - MONGO_LOG_DIR=/dev/null
     volumes:
       - mongodb:/data/db
+    ports:
+      - 27017:27017
     expose:
       - 27017
     networks:

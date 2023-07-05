@@ -1,11 +1,21 @@
-# Add user to docker group
+# Start root mode
 
-sudo usermod -aG docker $USER
+sudo su
 
-# Restart docker service
+# Update OS dependencies
 
-sudo service docker restart
+apt update
 
-# Launch docker-compose
+# Implement updates
 
-sudo docker-compose up --build -d 
+apt upgrade
+
+# Install docker
+
+sudo apt install docker.io docker-compose
+
+# Copy files
+
+Make this as your style
+
+After that, go to ec2-docker.md file
